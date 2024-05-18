@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<h2>Apply for jobs</h2>
+	<form id="applyForm" onsubmit="return validateForm()">
+		<label for="firstName">First Name:</label> <input type="text"
+			id="firstName" name="firstName" required> <label
+			for="lastName">Last Name:</label> <input type="text" id="lastName"
+			name="lastName" required> <label for="email">Email:</label> <input
+			type="email" id="email" name="email" required> <label
+			for="phone">Phone:</label> <input type="tel" id="phone" name="phone" required> <label
+			for="address">Address:</label> <input type="text" id="address"
+			name="address" required> <label for="city">City:</label> <input
+			type="text" id="city" name="city" required> <label
+			for="state">State:</label> <input type="text" id="state" name="state"
+			required> <label for="zip">Zip:</label> <input type="number"
+			id="zip" name="zip" required> <label for="country">Country:</label>
+		<select id="country" name="country" required>
+			<option value="">Select Country</option>
+			<option value""> India</option>
+			<option value""> USA</option>
+			<option value""> UK</option>
+			<option value""> Canada</option>
+            <!-- Add options dynamically if needed -->
+        </select> <label for="eduLevel">Education
+			Level:</label> <select id="eduLevel" name="eduLevel" required>
+			<option value="">Select Education Level</option>
+			<option value""> 10+2 Education</option>
+			<option value""> B.Tech</option>
+			<option value""> Degree</option>
+			<option value"">Diploma </option>
+            <!-- Add options dynamically if needed -->
+        </select> <label for="eduType">Education
+			Type:</label> <select id="eduType" name="eduType" required>
+			<option value="">Select Education Type</option>
+			<option value""> Techonology Background</option>
+			<option value""> Degree Background</option>
+			<option value""> Non-technical Background</option>
+            <!-- Add options dynamically if needed -->
+        </select> <label for="resume">Resume:</label> <input
+			type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"
+			required> <label for="coverLetter">Cover Letter:</label>
+		<textarea id="coverLetter" name="coverLetter"></textarea>
+
+		<label for="employed">Are you employed?</label> <input type="checkbox"
+			id="employed" name="employed" onclick="showEmployerFields()">
+
+		<div id="employerFields" style="display: none;">
+			<label for="currentEmployer">Current Employer:</label> <input
+				type="text" id="currentEmployer" name="currentEmployer"> <label
+				for="yearsOfExp">Years of Experience:</label> <input type="number"
+				id="yearsOfExp" name="yearsOfExp">
+		</div>
+
+		<label for="jobsToApply">Jobs you want to apply:</label>
+		<textarea id="jobs to apply" name="jobs to apply"></textarea>
+
+		<input type="submit" value="Submit">
+	</form>
+
+	<script>
+		function validateForm() {
+			var firstName = document.getElementById('firstName').value;
+			var lastName = document.getElementById('lastName').value;
+			var email = document.getElementById('email').value;
+			var phone = document.getElementById('phone').value;
+			var address = document.getElementById('address').value;
+			var city = document.getElementById('city').value;
+			var state = document.getElementById('state').value;
+			var zip = document.getElementById('zip').value;
+			var country = document.getElementById('country').value;
+			var eduLevel = document.getElementById('eduLevel').value;
+			var eduType = document.getElementById('eduType').value;
+			var resume = document.getElementById('resume').value;
+			var jobsToApply = document.getElementById('jobsToApply').value;
+
+			// Validation logic here
+
+			return true; // Change this to false if validation fails
+		}
+
+		function showEmployerFields() {
+			var isChecked = document.getElementById('employed').checked;
+			var employerFields = document.getElementById('employerFields');
+
+			if (isChecked) {
+				employerFields.style.display = 'block';
+			} else {
+				employerFields.style.display = 'none';
+			}
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
